@@ -126,5 +126,25 @@ html {
 /* vegetables */
 
 .vegetables {
-  height: 300vh;
+  position: relative;
+  background: url(../images/kitchen_bg.png);
+  background-size: cover;
+  background-attachment: fixed;
+  height: 500vh;
+  padding-top: 80vh;
+}
+
+.veggies {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.pot {
+  position: sticky;
+  top: 80vh;
+  left: calc(50% - 15rem);
+  width: 30rem;
 }

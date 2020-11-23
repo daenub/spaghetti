@@ -5,8 +5,8 @@ import {gsap} from "gsap"
 import {ScrollTrigger} from "gsap/ScrollTrigger"
 
 const $ = (selector, base = document) => base.querySelector(selector)
-// const $$ = (selector, base = document) =>
-//   Array.prototype.slice.call(base.querySelectorAll(selector))
+const $$ = (selector, base = document) =>
+  Array.prototype.slice.call(base.querySelectorAll(selector))
 
 // gsap.registerPlugin(MorphSVGPlugin)
 gsap.registerPlugin(ScrollTrigger)
@@ -36,7 +36,6 @@ gsap.from(spaghetti1, {
   scrollTrigger: {
     trigger: wavesSection,
     scrub: 1,
-    markers: true,
     pin: spaghetti1,
   },
 })
@@ -46,7 +45,6 @@ gsap.from(spaghetti2, {
   scrollTrigger: {
     trigger: wavesSection,
     scrub: 1,
-    markers: true,
     pin: spaghetti2,
   },
 })
@@ -56,7 +54,6 @@ gsap.from(spaghetti3, {
   scrollTrigger: {
     trigger: wavesSection,
     scrub: 1,
-    markers: true,
     pin: spaghetti3,
   },
 })
@@ -66,7 +63,34 @@ gsap.from(salt, {
   scrollTrigger: {
     trigger: wavesSection,
     scrub: 1,
-    markers: true,
     pin: salt,
   },
 })
+
+
+
+/* Vegetables */
+const vegetables = $(".vegetables")
+const veggies = $$(".veggies")
+
+veggies.forEach((veggie, i) => {
+  gsap.to(
+    veggie,
+    {
+      y: window.innerHeight,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: vegetables,
+        start: () => `${vegetables.offsetHeight / 3 / veggies.length * i} top`,
+        end: "bottom bottom",
+        scrub: 1,
+        markers: true,
+        pin: veggie,
+      },
+    }
+  )
+})
+
+// const pot = $(".pot")
+
+
