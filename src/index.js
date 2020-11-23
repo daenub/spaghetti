@@ -21,7 +21,6 @@ const wavesContainer = $(".wave-container")
 gsap.to(wavesContainer, {
   scrollTrigger: {
     trigger: wavesSection,
-    markers: true,
     pin: wavesContainer,
   },
 })
