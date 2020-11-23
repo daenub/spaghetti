@@ -84,7 +84,6 @@ veggies.forEach((veggie, i) => {
         start: () => `${vegetables.offsetHeight / 3 / veggies.length * i} top`,
         end: "bottom bottom",
         scrub: 1,
-        markers: true,
         pin: veggie,
       },
     }
